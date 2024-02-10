@@ -12,6 +12,13 @@ BOT_NAME = 'basic_scrapy_spider'
 SPIDER_MODULES = ['basic_scrapy_spider.spiders']
 NEWSPIDER_MODULE = 'basic_scrapy_spider.spiders'
 
+SCRAPEOPS_API_KEY ='MY_API_KEY'
+SCRAPEOPS_PROXY_ENABLED = True
+
+DOWNLOADER_MIDDLEWARES = {
+    'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
+}
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'quotes_js_scraper (+http://www.yourdomain.com)'
@@ -20,7 +27,7 @@ NEWSPIDER_MODULE = 'basic_scrapy_spider.spiders'
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 1
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
